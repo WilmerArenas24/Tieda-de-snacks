@@ -58,6 +58,10 @@ public class MaquinaSnacks {
             case 1 -> comprarSnack(consola,productos);
             case 2 -> mostrarTicket(productos);
             case 3 -> agregarSnack(consola);
+            case 4 -> {
+                System.out.println("Regresa Pronto!!");
+                salir = true;
+            }
         }
         return salir;
     }
