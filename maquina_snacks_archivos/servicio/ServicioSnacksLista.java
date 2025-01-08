@@ -1,10 +1,12 @@
-package maquina_snacks_archivos;
+package maquina_snacks_archivos.servicio;
+
+import maquina_snacks_archivos.dominio.Snack;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //Como se va a crear objectos no se agrega JavaBeans
-public class Snacks {
+public class ServicioSnacksLista  implements IServicioSnacks{
     private static final List<Snack> snacks;
 
     //No se usa constructor para iniciar la variable snacks ya que el constructor es para objectos
@@ -17,11 +19,16 @@ public class Snacks {
         snacks.add(new Snack("Sandwich",120));
     }
 
-    public static void agregarSnack(Snack snack){
+    public  void agregarSnack(Snack snack){
         snacks.add(snack);
     }
 
-    public static void mostrarSnacks(){
+    @Override
+    public void agregarSnack(maquina_snacks.Snack snack) {
+
+    }
+
+    public  void mostrarSnacks(){
         var inventarioSnacks = "";
 
         for (var snack:snacks){
@@ -33,7 +40,7 @@ public class Snacks {
 
     }
 
-    public static List<Snack> getSnacks(){
+    public List<Snack> getSnacks(){
         return snacks;
     }
 }
